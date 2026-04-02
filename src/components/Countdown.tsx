@@ -74,7 +74,7 @@ const Countdown = () => {
           color: 'primary.main',
           fontWeight: 700,
           fontSize: { xs: '2rem', sm: '2.5rem' },
-          fontFamily: '"Montserrat", sans-serif',
+          fontFamily: 'var(--font-comfortaa), sans-serif',
         }}
       >
         {value.toString().padStart(2, '0')}

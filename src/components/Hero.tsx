@@ -66,9 +66,10 @@ const Hero = () => {
               lineHeight: 1.1,
               mb: 1,
               fontFamily: 'var(--font-cursive), cursive',
+              fontWeight: 700, // Vintage/Bold style
             }}
           >
-            Nahuel & Melanie
+            Nahuel y Melanie
           </Typography>
 
           <Box

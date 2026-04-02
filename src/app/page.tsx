@@ -31,7 +31,7 @@ export default function Home() {
             sx={{
               fontFamily: 'var(--font-cursive), cursive',
               fontSize: '4.5rem',
-              fontWeight: 400,
+              fontWeight: 700,
             }}
           >
             Nahuel & Melanie

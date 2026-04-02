@@ -1,11 +1,10 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { Box, Button, IconButton, Typography, Fade } from '@mui/material';
+import { useState, useRef } from 'react';
+import { Box, Button, Typography, Fade, Backdrop } from '@mui/material';
 import { Icon } from '@iconify/react';
 
 const AudioPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -13,7 +12,6 @@ const AudioPlayer = () => {
   const startInvitation = () => {
     if (audioRef.current) {
       audioRef.current.play().catch(err => console.log("Audio playback failed", err));
-      setIsPlaying(true);
       setShowOverlay(false);
     }
   };
@@ -34,81 +32,161 @@ const AudioPlayer = () => {
         style={{ display: 'none' }}
       />
 
-      {/* Overlay for Autoplay Bypass */}
-      <Fade in={showOverlay} timeout={1000} unmountOnExit>
-        <Box
-          sx={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            bgcolor: 'background.default',
-            zIndex: 9999,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundImage: 'linear-gradient(rgba(253, 252, 248, 0.9), rgba(253, 252, 248, 0.9)), url("https://www.transparenttextures.com/patterns/natural-paper.png")',
-          }}
-        >
-          <Typography
-            variant="h2"
+      {/* Elegant Modal Invitation */}
+      <Backdrop
+        open={showOverlay}
+        sx={{
+          zIndex: 9999,
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          backdropFilter: 'blur(10px)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          px: 2,
+        }}
+      >
+        <Fade in={showOverlay} timeout={1200}>
+          <Box
             sx={{
-              mb: 4,
-              color: 'primary.main',
+              position: 'relative',
+              maxWidth: 480,
+              width: '100%',
+              backgroundColor: '#fdfcf8', // Elegant cream
+              backgroundImage: 'url("https://www.transparenttextures.com/patterns/handmade-paper.png")', // Realistic paper texture
+              borderRadius: '24px',
+              padding: { xs: 4, sm: 6 },
               textAlign: 'center',
-              px: 3,
-              fontFamily: 'var(--font-cursive), cursive',
-              fontSize: { xs: '3rem', sm: '4.5rem' },
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(142, 166, 144, 0.1) inset',
+              border: '1px solid rgba(142, 166, 144, 0.2)',
+              overflow: 'hidden',
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 10,
+                left: 10,
+                right: 10,
+                bottom: 10,
+                border: '1px solid rgba(142, 166, 144, 0.3)',
+                borderRadius: '18px',
+                pointerEvents: 'none',
+              }
             }}
           >
-            Bienvenidos a la Invitación
-          </Typography>
-          <Button
-            variant="contained"
-            onClick={startInvitation}
-            size="large"
-            sx={{
-              px: 6,
-              py: 2,
-              fontSize: '1.2rem',
-              bgcolor: 'primary.main',
-              '&:hover': { bgcolor: 'primary.dark' },
-              borderRadius: '50px',
-              fontFamily: 'var(--font-montserrat)',
-              boxShadow: '0 10px 20px rgba(142, 166, 144, 0.3)',
-            }}
-          >
-            Abrir Invitación
-          </Button>
-        </Box>
-      </Fade>
+            {/* Decorative Icon */}
+            <Box sx={{ mb: 3 }}>
+              <Icon 
+                icon="mdi:music-note-outline" 
+                width={32} 
+                style={{ color: '#8ea690', opacity: 0.6 }} 
+              />
+            </Box>
 
-      {/* Floating Control Button */}
+            <Typography
+              variant="h3"
+              sx={{
+                mb: 1,
+                color: '#5d6d5e',
+                fontFamily: 'var(--font-cursive), cursive',
+                fontSize: { xs: '2.5rem', sm: '3.5rem' },
+                fontWeight: 600,
+              }}
+            >
+              Nahuel & Melanie
+            </Typography>
+
+            <Typography
+              sx={{
+                mb: 5,
+                color: '#8ea690',
+                fontFamily: 'var(--font-comfortaa), sans-serif',
+                fontSize: '1.1rem',
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                fontWeight: 500,
+              }}
+            >
+              ¡Nos Casamos!
+            </Typography>
+
+            <Typography
+              sx={{
+                mb: 5,
+                color: '#666',
+                fontFamily: 'var(--font-comfortaa), sans-serif',
+                fontSize: '0.95rem',
+                lineHeight: 1.6,
+                fontStyle: 'italic',
+              }}
+            >
+              "Te invitamos a ser parte de nuestra historia. <br />
+              Haz clic para entrar."
+            </Typography>
+
+            <Button
+              variant="contained"
+              onClick={startInvitation}
+              size="large"
+              fullWidth
+              sx={{
+                py: 2,
+                fontSize: '1rem',
+                bgcolor: '#8ea690',
+                color: 'white',
+                '&:hover': { 
+                  bgcolor: '#7a917c',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 8px 20px rgba(142, 166, 144, 0.4)',
+                },
+                borderRadius: '12px',
+                fontFamily: 'var(--font-comfortaa), sans-serif',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(142, 166, 144, 0.3)',
+                fontWeight: 600,
+              }}
+            >
+              Abrir Invitación
+            </Button>
+          </Box>
+        </Fade>
+      </Backdrop>
+
+      {/* Floating Control Button (Visible after opening) */}
       {!showOverlay && (
         <Fade in={true}>
-          <IconButton
-            onClick={toggleMute}
+          <Box
             sx={{
               position: 'fixed',
               bottom: 24,
               right: 24,
               zIndex: 1000,
-              bgcolor: 'background.paper',
-              boxShadow: 3,
-              '&:hover': { bgcolor: 'background.paper', opacity: 0.9 },
-              width: 56,
-              height: 56,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              alignItems: 'center',
             }}
           >
-            <Icon
-              icon={isMuted ? "mdi:volume-off" : "mdi:volume-high"}
-              width={32}
-              height={32}
-              style={{ color: '#8ea690' }}
-            />
-          </IconButton>
+            <Button
+              onClick={toggleMute}
+              sx={{
+                minWidth: 'auto',
+                width: 48,
+                height: 48,
+                borderRadius: '50%',
+                bgcolor: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(10px)',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                border: '1px solid rgba(142, 166, 144, 0.2)',
+                '&:hover': { bgcolor: 'white' },
+              }}
+            >
+              <Icon
+                icon={isMuted ? "mdi:volume-off" : "mdi:volume-high"}
+                width={24}
+                height={24}
+                style={{ color: '#8ea690' }}
+              />
+            </Button>
+          </Box>
         </Fade>
       )}
     </>

@@ -25,40 +25,40 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'var(--font-montserrat), sans-serif',
+    fontFamily: 'var(--font-comfortaa), sans-serif',
     h1: {
       fontFamily: 'var(--font-cursive), cursive',
-      fontWeight: 400,
+      fontWeight: 700,
     },
     h2: {
       fontFamily: 'var(--font-cursive), cursive',
-      fontWeight: 400,
+      fontWeight: 600,
     },
     h3: {
       fontFamily: 'var(--font-cursive), cursive',
-      fontWeight: 400,
+      fontWeight: 600,
     },
     h4: {
-      fontFamily: '"Montserrat", sans-serif',
+      fontFamily: 'var(--font-comfortaa), sans-serif',
       fontWeight: 600,
       textTransform: 'uppercase',
       letterSpacing: '0.1em',
     },
     h5: {
-      fontFamily: '"Montserrat", sans-serif',
+      fontFamily: 'var(--font-comfortaa), sans-serif',
       fontWeight: 500,
     },
     h6: {
-      fontFamily: '"Montserrat", sans-serif',
+      fontFamily: 'var(--font-comfortaa), sans-serif',
       fontWeight: 500,
     },
     body1: {
-      fontFamily: '"Montserrat", sans-serif',
+      fontFamily: 'var(--font-comfortaa), sans-serif',
       fontSize: '1rem', // 16px
       lineHeight: 1.8,
     },
     body2: {
-      fontFamily: '"Montserrat", sans-serif',
+      fontFamily: 'var(--font-comfortaa), sans-serif',
       fontSize: '0.875rem', // 14px
     },
   },

@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Montserrat, Pinyon_Script } from "next/font/google";
+import { Comfortaa, Dancing_Script } from "next/font/google";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./theme";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const comfortaa = Comfortaa({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-comfortaa",
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const pinyonScript = Pinyon_Script({
+const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-cursive",
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${montserrat.variable} ${pinyonScript.variable}`}>
+      <body className={`${comfortaa.variable} ${dancingScript.variable}`}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {children}
