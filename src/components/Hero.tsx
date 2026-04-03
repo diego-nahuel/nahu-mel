@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <Box
       sx={{
-        minHeight: { xs: '100dvh', md: 'calc(100vh - 80px)' }, // 100dvh for mobile, frame height for desktop
+        minHeight: { xs: '100dvh', md: '100vh' }, // 100dvh for mobile, frame height for desktop
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -62,7 +62,7 @@ const Hero = () => {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: '5rem', sm: '7rem', md: '8.5rem' },
+                  fontSize: '5rem',
                   fontFamily: 'var(--font-cursive), cursive',
                   lineHeight: 0.8,
                   mb: 2,
@@ -80,7 +80,7 @@ const Hero = () => {
               <Typography
                 variant="h2"
                 sx={{
-                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+                  fontSize: '2.5rem',
                   fontFamily: 'var(--font-cursive), cursive',
                   my: 1,
                 }}
@@ -97,7 +97,7 @@ const Hero = () => {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: '5rem', sm: '7rem', md: '8.5rem' },
+                  fontSize: '5rem',
                   fontFamily: 'var(--font-cursive), cursive',
                   lineHeight: 0.8,
                   mt: 1,
@@ -138,7 +138,7 @@ const Hero = () => {
         sx={{
           position: 'absolute',
           bottom: 40,
-          display: 'flex', // Visible on all viewports
+          display: { xs: 'flex', lg: 'none' },
           flexDirection: 'column',
           alignItems: 'center',
           gap: 1,

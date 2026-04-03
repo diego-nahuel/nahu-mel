@@ -59,20 +59,20 @@ export default function Home() {
       <RSVPSection />
       
       {/* Footer / Final Message */}
-      <Box sx={{ py: 10, textAlign: 'center', bgcolor: 'terracotta.main', color: 'white' }}>
+      <Box sx={{ pb: 10, pt: 5, textAlign: 'center', bgcolor: 'terracotta.main', color: 'white' }}>
         <Box component="div" sx={{ mb: 2 }}>
           <Box
             component="span"
             sx={{
               fontFamily: 'var(--font-cursive), cursive',
-              fontSize: { xs: '3.5rem', sm: '4.5rem' },
+              fontSize: { xs: '3rem' },
               fontWeight: 700,
             }}
           >
             Nahuel & Melanie
           </Box>
         </Box>
-        <Box component="p" sx={{ opacity: 0.8, letterSpacing: 2, textTransform: 'uppercase', fontSize: '0.9rem' }}>
+        <Box component="p" sx={{ opacity: 0.8, letterSpacing: 2, textTransform: 'uppercase', fontSize: '0.9rem', px: 5 }}>
           ¡Te esperamos para celebrar nuestro gran día!
         </Box>
       </Box>

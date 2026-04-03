@@ -61,7 +61,7 @@ const AnimatedEnvelopeModal = ({ onOpen }: AnimatedEnvelopeModalProps) => {
             sx={{
               position: 'relative',
               width: { xs: '90%', sm: '480px' },
-              height: '380px', // The height of the closed envelope body
+              height: '280px', // The height of the closed envelope body
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -76,7 +76,7 @@ const AnimatedEnvelopeModal = ({ onOpen }: AnimatedEnvelopeModalProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 sx={{
                   position: 'absolute',
-                  top: -240, // Above the top flap
+                  top: -200, // Above the top flap
                   textAlign: 'center',
                   color: 'white',
                   zIndex: 10,
@@ -108,14 +108,14 @@ const AnimatedEnvelopeModal = ({ onOpen }: AnimatedEnvelopeModalProps) => {
                 bgcolor: '#f5efe6',
                 borderRadius: '0 0 12px 12px',
                 zIndex: 1,
-                // boxShadow: '0 20px 50px rgba(0,0,0,0.5)', // Eliminado temporalmente
+                boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
                 '&::before': { // Top Flap (pointing up)
                   content: '""',
                   position: 'absolute',
-                  top: -160, 
+                  top: -130,
                   left: 0,
                   width: '100%',
-                  height: '161px', // Solapado 1px para eliminar la línea negra (gap)
+                  height: '131px', // Solapado 1px para eliminar la línea negra (gap)
                   bgcolor: '#f5efe6',
                   clipPath: 'polygon(0 100%, 50% 0, 100% 100%)',
                 }
@@ -141,9 +141,9 @@ const AnimatedEnvelopeModal = ({ onOpen }: AnimatedEnvelopeModalProps) => {
               onClick={handleOpen}
               sx={{
                 position: 'absolute',
-                top: -100, // Peek out from the pocket
+                top: -80, // Peek out from the pocket
                 width: '92%',
-                height: '420px',
+                height: '320px',
                 bgcolor: 'white',
                 backgroundImage: 'url("/home-textura-color-terracota.png")',
                 backgroundSize: 'cover',
@@ -156,7 +156,7 @@ const AnimatedEnvelopeModal = ({ onOpen }: AnimatedEnvelopeModalProps) => {
                 justifyContent: 'flex-start',
                 alignItems: 'center',
                 textAlign: 'center',
-                pt: 6,
+                pt: 4,
                 px: 3,
                 // boxShadow: '0 10px 30px rgba(0,0,0,0.2)', // Eliminado temporalmente
                 '&:hover': {

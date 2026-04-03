@@ -44,7 +44,7 @@ const LocationMap = () => {
             src="https://maps.google.com/maps?q=-24.604085,-65.381189&hl=es&z=15&output=embed" 
             width="100%" 
             height="450" 
-            style={{ border: 0, display: 'block' }} 
+            style={{ border: 0, display: 'block', borderRadius: '8px' }} 
             allowFullScreen={false} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"

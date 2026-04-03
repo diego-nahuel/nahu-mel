@@ -67,12 +67,12 @@ body {
   .app-container {
     width: 100%;
     max-width: 500px;
-    margin: 40px auto;
+    margin: 0 auto;
     background-color: #fcf3ee; /* The creamy invitation color */
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(192, 116, 90, 0.2); /* Subtle terracotta border */
     position: relative;
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
