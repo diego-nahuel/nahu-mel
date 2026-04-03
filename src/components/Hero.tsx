@@ -1,117 +1,171 @@
 'use client';
 
-import { Box, Typography, Container, Fade } from '@mui/material';
+import { Box, Typography, Container, IconButton } from '@mui/material';
+import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
     <Box
       sx={{
-        height: '100vh',
-        width: '100vw',
+        minHeight: { xs: '100dvh', md: 'calc(100vh - 80px)' }, // 100dvh for mobile, frame height for desktop
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        background: 'linear-gradient(rgba(232, 240, 232, 0.7), rgba(232, 240, 232, 0.7)), url("https://www.transparenttextures.com/patterns/natural-paper.png")',
-        bgcolor: 'background.default',
-        p: 3,
+        backgroundImage: 'url("/home-textura-color-terracota.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         position: 'relative',
-        overflow: 'hidden',
+        color: 'text.primary',
+        px: 2,
+        // Ensure consistent behavior in the framed layout
+        '@media (max-width: 1023px)': {
+          minHeight: '100dvh',
+        },
       }}
     >
-      {/* Decorative Elements */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: { xs: 20, md: 40 },
-          left: { xs: 20, md: 40 },
-          right: { xs: 20, md: 40 },
-          bottom: { xs: 20, md: 40 },
-          border: '1px solid rgba(93, 93, 93, 0.2)',
-          pointerEvents: 'none',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 10,
-            left: 10,
-            right: 10,
-            bottom: 10,
-            border: '1px solid rgba(93, 93, 93, 0.1)',
-          }
-        }}
-      />
-
-      <Fade in={true} timeout={2000}>
-        <Container maxWidth="md">
-          <Typography
-            variant="h4"
-            sx={{
-              color: 'primary.main',
-              fontWeight: 400,
-              letterSpacing: 4,
-              mb: 2,
-              opacity: 0.8,
-              fontSize: { xs: '1rem', sm: '1.25rem' },
-            }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+      >
+        <Container maxWidth="sm">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
-            ¡NOS CASAMOS!
-          </Typography>
+            <Typography
+              sx={{
+                textTransform: 'uppercase',
+                letterSpacing: '0.2em',
+                mb: 6,
+                fontSize: { xs: '0.8rem', sm: '1rem' },
+                fontWeight: 800,
+              }}
+            >
+              Nos Casamos
+            </Typography>
+          </motion.div>
 
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: '4.5rem', sm: '7rem', md: '9rem' },
-              color: 'primary.main',
-              lineHeight: 1.1,
-              mb: 1,
-              fontFamily: 'var(--font-cursive), cursive',
-              fontWeight: 700, // Vintage/Bold style
-            }}
+          <Box sx={{ mb: { xs: 4, sm: 6 } }}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <Typography
+                variant="h1"
+                sx={{
+                  fontSize: { xs: '5rem', sm: '7rem', md: '8.5rem' },
+                  fontFamily: 'var(--font-cursive), cursive',
+                  lineHeight: 0.8,
+                  mb: 2,
+                }}
+              >
+                Nahuel
+              </Typography>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            >
+              <Typography
+                variant="h2"
+                sx={{
+                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+                  fontFamily: 'var(--font-cursive), cursive',
+                  my: 1,
+                }}
+              >
+                &
+              </Typography>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.5 }}
+            >
+              <Typography
+                variant="h1"
+                sx={{
+                  fontSize: { xs: '5rem', sm: '7rem', md: '8.5rem' },
+                  fontFamily: 'var(--font-cursive), cursive',
+                  lineHeight: 0.8,
+                  mt: 1,
+                }}
+              >
+                Melanie
+              </Typography>
+            </motion.div>
+          </Box>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2 }}
           >
-            Nahuel y Melanie
-          </Typography>
-
-          <Box
-            sx={{
-              width: '80px',
-              height: '1px',
-              bgcolor: 'secondary.main',
-              mx: 'auto',
-              my: 4,
-            }}
-          />
-
-          <Typography
-            variant="h4"
-            sx={{
-              color: 'text.primary',
-              fontWeight: 400,
-              fontSize: { xs: '1.2rem', sm: '1.5rem' },
-              letterSpacing: 2,
-            }}
-          >
-            1 DE MAYO • 2026
-          </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                textTransform: 'uppercase',
+                letterSpacing: '0.4em',
+                fontSize: { xs: '0.9rem', sm: '1.1rem' },
+                fontWeight: 800,
+                mt: { xs: 2, sm: 4 },
+              }}
+            >
+              1 de Mayo 2026
+            </Typography>
+          </motion.div>
         </Container>
-      </Fade>
-      
+      </motion.div>
+
       {/* Scroll Indicator */}
       <Box
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.5, duration: 1 }}
         sx={{
           position: 'absolute',
-          bottom: 30,
-          animation: 'bounce 2s infinite',
-          '@keyframes bounce': {
-            '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
-            '40%': { transform: 'translateY(-10px)' },
-            '60%': { transform: 'translateY(-5px)' },
-          }
+          bottom: 40,
+          display: 'flex', // Visible on all viewports
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 1,
         }}
       >
-        <Typography variant="body2" sx={{ color: 'primary.main', opacity: 0.6 }}>
-          Desliza para ver más
+        <Typography
+          variant="caption"
+          sx={{
+            letterSpacing: '0.3em',
+            textTransform: 'uppercase',
+            opacity: 0.7,
+            fontSize: '0.7rem',
+          }}
+        >
+          Desliza
         </Typography>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Icon 
+            icon="material-symbols:keyboard-arrow-down-rounded" 
+            width="24" 
+            height="24" 
+            style={{ opacity: 0.6 }}
+          />
+        </motion.div>
       </Box>
     </Box>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Box, Typography, Paper, Grid } from '@mui/material';
+import { Box, Typography, Grid, Container } from '@mui/material';
 
 interface TimeLeft {
   days: number;
@@ -48,33 +48,18 @@ const Countdown = () => {
     return () => clearInterval(timer);
   }, [calculateTimeLeft]);
 
-  if (!timeLeft) return (
-    <Box sx={{ mt: 4, mb: 4, height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <Typography variant="body2" sx={{ opacity: 0.5 }}>Cargando cuenta regresiva...</Typography>
-    </Box>
-  );
+  if (!timeLeft) return null;
 
-  const Item = ({ value, label }: { value: number; label: string }) => (
-    <Paper
-      elevation={0}
-      sx={{
-        p: { xs: 1.5, sm: 2 },
-        minWidth: { xs: 70, sm: 100 },
-        textAlign: 'center',
-        background: 'rgba(255, 255, 255, 0.4)',
-        backdropFilter: 'blur(4px)',
-        border: '1px solid rgba(142, 166, 144, 0.2)',
-        borderRadius: 2,
-      }}
-    >
+  const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+    <Box sx={{ textAlign: 'center' }}>
       <Typography
-        variant="h4"
-        component="div"
+        variant="h2"
         sx={{
-          color: 'primary.main',
-          fontWeight: 700,
-          fontSize: { xs: '2rem', sm: '2.5rem' },
-          fontFamily: 'var(--font-comfortaa), sans-serif',
+          fontSize: { xs: '3rem', sm: '4rem', md: '5rem' },
+          fontWeight: 200,
+          fontFamily: 'serif',
+          lineHeight: 1,
+          mb: 1,
         }}
       >
         {value.toString().padStart(2, '0')}
@@ -83,31 +68,64 @@ const Countdown = () => {
         variant="caption"
         sx={{
           textTransform: 'uppercase',
-          letterSpacing: 1,
-          color: 'text.secondary',
+          letterSpacing: '0.2em',
+          fontSize: { xs: '0.6rem', sm: '0.7rem' },
+          opacity: 0.8,
         }}
       >
         {label}
       </Typography>
-    </Paper>
+    </Box>
   );
 
   return (
-    <Box sx={{ mt: 4, mb: 4 }}>
-      <Grid container spacing={2} justifyContent="center">
-        <Grid item>
-          <Item value={timeLeft.days} label="Días" />
+    <Box
+      sx={{
+        py: 10,
+        backgroundImage: 'url("/home-textura-color-terracota.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <Container maxWidth="sm">
+        <Typography
+          variant="h3"
+          sx={{
+            fontFamily: 'var(--font-cursive), cursive',
+            fontSize: { xs: '2.5rem', sm: '3.5rem' },
+            mb: 4,
+          }}
+        >
+          Faltan
+        </Typography>
+
+        <Grid container spacing={2} justifyContent="center" sx={{ mb: 4 }}>
+          <Grid item xs={3}>
+            <TimeUnit value={timeLeft.days} label="Días" />
+          </Grid>
+          <Grid item xs={3}>
+            <TimeUnit value={timeLeft.hours} label="Hrs" />
+          </Grid>
+          <Grid item xs={3}>
+            <TimeUnit value={timeLeft.minutes} label="Min" />
+          </Grid>
+          <Grid item xs={3}>
+            <TimeUnit value={timeLeft.seconds} label="Seg" />
+          </Grid>
         </Grid>
-        <Grid item>
-          <Item value={timeLeft.hours} label="Horas" />
-        </Grid>
-        <Grid item>
-          <Item value={timeLeft.minutes} label="Min" />
-        </Grid>
-        <Grid item>
-          <Item value={timeLeft.seconds} label="Seg" />
-        </Grid>
-      </Grid>
+
+        <Typography
+          variant="h3"
+          sx={{
+            fontFamily: 'var(--font-cursive), cursive',
+            fontSize: { xs: '2.5rem', sm: '3.5rem' },
+            mt: 4,
+          }}
+        >
+          para nuestra boda
+        </Typography>
+      </Container>
     </Box>
   );
 };

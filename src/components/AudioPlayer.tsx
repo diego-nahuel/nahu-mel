@@ -2,26 +2,71 @@
 
 import { useState, useRef } from 'react';
 import { Box, Button, Typography, Fade, Backdrop } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
+import AnimatedEnvelopeModal from './AnimatedEnvelopeModal';
 
 const AudioPlayer = () => {
   const [showOverlay, setShowOverlay] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const startInvitation = () => {
+  const togglePlay = () => {
     if (audioRef.current) {
-      audioRef.current.play().catch(err => console.log("Audio playback failed", err));
-      setShowOverlay(false);
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(err => console.log("Audio playback failed", err));
+      }
+      setIsPlaying(!isPlaying);
     }
   };
 
-  const toggleMute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
+  const VinylIcon = () => (
+    <Box
+      component={motion.div}
+      animate={{ rotate: isPlaying ? 360 : 0 }}
+      transition={isPlaying ? {
+        duration: 4, // Slightly slower, more natural
+        repeat: Infinity,
+        ease: "linear"
+      } : {
+        duration: 0.8,
+        ease: "easeOut"
+      }}
+      sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+    >
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#SVGXv8lpc2Y)">
+          {/* Main Record Body - Terracotta */}
+          <path fill="#C0745A" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" />
+          
+          {/* Highlights/Reflections - Lighter Terracotta for a vinyl-like shimmer */}
+          <path fill="#D4957D" opacity="0.6" d="M12 12L14.571 22.685C17.727 22.015 20.485 20.315 22.576 17.827C21.492 15.642 19.492 13.642 12 12Z" />
+          <path fill="#D4957D" opacity="0.6" d="M12 12L9.43 1.315C6.274 1.985 3.516 3.685 1.424 6.173C2.508 8.358 4.508 10.358 12 12Z" />
+          
+          {/* Center Label - Creamy White (Invitation color) */}
+          <circle cx="12" cy="12" r="2.391" fill="#fcf3ee" stroke="#5d5d5d" strokeWidth="0.5" />
+          
+          {/* Grooves - Dark Gray (Invitation primary color) */}
+          <circle cx="12" cy="12" r="8.61" stroke="#5d5d5d" strokeWidth="0.5" opacity="0.3" />
+          <circle cx="12" cy="12" r="6.695" stroke="#5d5d5d" strokeWidth="0.5" opacity="0.3" />
+          <circle cx="12" cy="12" r="4.78" stroke="#5d5d5d" strokeWidth="0.5" opacity="0.3" />
+          
+          {/* Center Hole */}
+          <circle cx="12" cy="12" r="0.4" fill="#5d5d5d" />
+          
+          {/* Outer Border */}
+          <circle cx="12" cy="12" r="11" stroke="#5d5d5d" strokeWidth="1" />
+        </g>
+        <defs>
+          <clipPath id="SVGXv8lpc2Y">
+            <rect width="24" height="24" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </Box>
+  );
 
   return (
     <>
@@ -32,132 +77,28 @@ const AudioPlayer = () => {
         style={{ display: 'none' }}
       />
 
-      {/* Elegant Modal Invitation */}
-      <Backdrop
-        open={showOverlay}
-        sx={{
-          zIndex: 9999,
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
-          backdropFilter: 'blur(10px)',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          px: 2,
+      <AnimatedEnvelopeModal 
+        onOpen={() => {
+          if (audioRef.current) {
+            audioRef.current.play().catch(err => console.log("Audio playback failed", err));
+            setIsPlaying(true);
+            setTimeout(() => {
+              setShowButton(true);
+            }, 15000);
+          }
+          setShowOverlay(false);
         }}
-      >
-        <Fade in={showOverlay} timeout={1200}>
+      />
+
+      {/* Floating Control Button (Visible 5 seconds after starting) */}
+      {showButton && (
+        <Fade in={true} timeout={1000}>
           <Box
-            sx={{
-              position: 'relative',
-              maxWidth: 480,
-              width: '100%',
-              backgroundColor: '#fdfcf8', // Elegant cream
-              backgroundImage: 'url("https://www.transparenttextures.com/patterns/handmade-paper.png")', // Realistic paper texture
-              borderRadius: '24px',
-              padding: { xs: 4, sm: 6 },
-              textAlign: 'center',
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(142, 166, 144, 0.1) inset',
-              border: '1px solid rgba(142, 166, 144, 0.2)',
-              overflow: 'hidden',
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: 10,
-                left: 10,
-                right: 10,
-                bottom: 10,
-                border: '1px solid rgba(142, 166, 144, 0.3)',
-                borderRadius: '18px',
-                pointerEvents: 'none',
-              }
-            }}
-          >
-            {/* Decorative Icon */}
-            <Box sx={{ mb: 3 }}>
-              <Icon 
-                icon="mdi:music-note-outline" 
-                width={32} 
-                style={{ color: '#8ea690', opacity: 0.6 }} 
-              />
-            </Box>
-
-            <Typography
-              variant="h3"
-              sx={{
-                mb: 1,
-                color: '#5d6d5e',
-                fontFamily: 'var(--font-cursive), cursive',
-                fontSize: { xs: '2.5rem', sm: '3.5rem' },
-                fontWeight: 600,
-              }}
-            >
-              Nahuel & Melanie
-            </Typography>
-
-            <Typography
-              sx={{
-                mb: 5,
-                color: '#8ea690',
-                fontFamily: 'var(--font-comfortaa), sans-serif',
-                fontSize: '1.1rem',
-                letterSpacing: '1px',
-                textTransform: 'uppercase',
-                fontWeight: 500,
-              }}
-            >
-              ¡Nos Casamos!
-            </Typography>
-
-            <Typography
-              sx={{
-                mb: 5,
-                color: '#666',
-                fontFamily: 'var(--font-comfortaa), sans-serif',
-                fontSize: '0.95rem',
-                lineHeight: 1.6,
-                fontStyle: 'italic',
-              }}
-            >
-              "Te invitamos a ser parte de nuestra historia. <br />
-              Haz clic para entrar."
-            </Typography>
-
-            <Button
-              variant="contained"
-              onClick={startInvitation}
-              size="large"
-              fullWidth
-              sx={{
-                py: 2,
-                fontSize: '1rem',
-                bgcolor: '#8ea690',
-                color: 'white',
-                '&:hover': { 
-                  bgcolor: '#7a917c',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 8px 20px rgba(142, 166, 144, 0.4)',
-                },
-                borderRadius: '12px',
-                fontFamily: 'var(--font-comfortaa), sans-serif',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 15px rgba(142, 166, 144, 0.3)',
-                fontWeight: 600,
-              }}
-            >
-              Abrir Invitación
-            </Button>
-          </Box>
-        </Fade>
-      </Backdrop>
-
-      {/* Floating Control Button (Visible after opening) */}
-      {!showOverlay && (
-        <Fade in={true}>
-          <Box
+            className="floating-audio-control"
             sx={{
               position: 'fixed',
-              bottom: 24,
-              right: 24,
+              bottom: 30,
+              right: 30,
               zIndex: 1000,
               display: 'flex',
               flexDirection: 'column',
@@ -166,25 +107,29 @@ const AudioPlayer = () => {
             }}
           >
             <Button
-              onClick={toggleMute}
+              onClick={togglePlay}
               sx={{
                 minWidth: 'auto',
-                width: 48,
-                height: 48,
+                width: 60,
+                height: 60,
+                padding: 0,
                 borderRadius: '50%',
                 bgcolor: 'rgba(255, 255, 255, 0.9)',
                 backdropFilter: 'blur(10px)',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                border: '1px solid rgba(142, 166, 144, 0.2)',
-                '&:hover': { bgcolor: 'white' },
+                boxShadow: '0 8px 30px rgba(192, 116, 90, 0.25)',
+                border: '1.5px solid rgba(192, 116, 90, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                '&:hover': { 
+                  bgcolor: 'white',
+                  transform: 'scale(1.1)',
+                  boxShadow: '0 12px 35px rgba(192, 116, 90, 0.35)',
+                },
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
               }}
             >
-              <Icon
-                icon={isMuted ? "mdi:volume-off" : "mdi:volume-high"}
-                width={24}
-                height={24}
-                style={{ color: '#8ea690' }}
-              />
+              <VinylIcon />
             </Button>
           </Box>
         </Fade>

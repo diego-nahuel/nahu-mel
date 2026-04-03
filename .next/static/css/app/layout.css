@@ -450,3 +450,47 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
 }
 
+/* Framed layout for Laptop/Desktop */
+@media (min-width: 1024px) {
+  body {
+    background-color: #f5f0eb; /* Slightly darker background to highlight the frame */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .app-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #fcf3ee; /* The creamy invitation color */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(192, 116, 90, 0.2); /* Subtle terracotta border */
+    position: relative;
+    min-height: calc(100vh - 80px);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure the background texture covers only the frame */
+  .app-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    z-index: 100;
+  }
+
+  /* Keep music button relative to the frame on desktop */
+  .floating-audio-control {
+    right: calc(50% - 250px + 30px) !important;
+  }
+}
+
+
+

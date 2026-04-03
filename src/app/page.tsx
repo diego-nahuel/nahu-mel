@@ -1,36 +1,71 @@
 'use client';
 
+import { useEffect } from 'react';
 import { Box } from '@mui/material';
 import Hero from '@/components/Hero';
+import Phrase from '@/components/Phrase';
 import Countdown from '@/components/Countdown';
 import EventDetails from '@/components/EventDetails';
 import LocationMap from '@/components/LocationMap';
 import AudioPlayer from '@/components/AudioPlayer';
+import CelebrationItinerary from '@/components/CelebrationItinerary';
+import RSVPSection from '@/components/RSVPSection';
 
 export default function Home() {
+  useEffect(() => {
+    // Reset scroll to top on page reload/mount
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box component="main" sx={{ position: 'relative' }}>
       <AudioPlayer />
       <Hero />
-      <Box sx={{ 
-        py: 8, 
-        textAlign: 'center', 
-        bgcolor: 'background.default',
-        background: 'linear-gradient(rgba(232, 240, 232, 0.9), rgba(232, 240, 232, 0.9)), url("https://www.transparenttextures.com/patterns/natural-paper.png")',
-      }}>
-        <Countdown />
+      <Phrase />
+      <Countdown />
+      <Box 
+        sx={{ 
+          position: 'relative',
+          bgcolor: '#fcf3ee',
+          // Use pseudo-element for background to flip it horizontally but not the content
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundImage: 'url("/background-golden.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+            backgroundRepeat: 'repeat-y',
+            transform: 'scaleX(-1)', // Horizontal flip across the Y-axis
+            zIndex: 0,
+            pointerEvents: 'none',
+          },
+          // Ensure children stay on top
+          '& > *': {
+            position: 'relative',
+            zIndex: 1,
+          },
+        }}
+      >
+        <EventDetails />
+        <LocationMap />
+        <CelebrationItinerary />
       </Box>
-      <EventDetails />
-      <LocationMap />
+
+      {/* RSVP Section */}
+      <RSVPSection />
       
       {/* Footer / Final Message */}
-      <Box sx={{ py: 10, textAlign: 'center', bgcolor: 'primary.main', color: 'white' }}>
+      <Box sx={{ py: 10, textAlign: 'center', bgcolor: 'terracotta.main', color: 'white' }}>
         <Box component="div" sx={{ mb: 2 }}>
           <Box
             component="span"
             sx={{
               fontFamily: 'var(--font-cursive), cursive',
-              fontSize: '4.5rem',
+              fontSize: { xs: '3.5rem', sm: '4.5rem' },
               fontWeight: 700,
             }}
           >

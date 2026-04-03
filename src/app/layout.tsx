@@ -32,7 +32,9 @@ export default function RootLayout({
       <body className={`${comfortaa.variable} ${dancingScript.variable}`}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {children}
+          <div className="app-container">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -2,6 +2,16 @@
 
 import { createTheme } from '@mui/material/styles';
 
+// Extend the MUI theme types to include 'terracotta'
+declare module '@mui/material/styles' {
+  interface Palette {
+    terracotta: Palette['primary'];
+  }
+  interface PaletteOptions {
+    terracotta: PaletteOptions['primary'];
+  }
+}
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -12,6 +22,10 @@ const theme = createTheme({
       main: '#a9bcd0', // Soft Pastel Blue
       contrastText: '#ffffff',
     },
+    terracotta: {
+      main: '#C0745A',
+      contrastText: '#ffffff',
+    },
     error: {
       main: '#f08080', // Soft Red (hearts)
     },
@@ -20,8 +34,8 @@ const theme = createTheme({
       paper: '#ffffff',
     },
     text: {
-      primary: '#5d5d5d',
-      secondary: '#7a7a7a',
+      primary: '#1A1A1A', // Very dark gray/soft black
+      secondary: '#4A4A4A',
     },
   },
   typography: {
