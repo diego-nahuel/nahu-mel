@@ -9,6 +9,8 @@ import EventDetails from '@/components/EventDetails';
 import LocationMap from '@/components/LocationMap';
 import AudioPlayer from '@/components/AudioPlayer';
 import CelebrationItinerary from '@/components/CelebrationItinerary';
+import CardCostSection from '@/components/CardCostSection';
+import DressCodeSection from '@/components/DressCodeSection';
 import RSVPSection from '@/components/RSVPSection';
 
 export default function Home() {
@@ -54,6 +56,12 @@ export default function Home() {
         <LocationMap />
         <CelebrationItinerary />
       </Box>
+
+      {/* Card Cost Section */}
+      <CardCostSection />
+
+      {/* Dress Code Section */}
+      <DressCodeSection />
 
       {/* RSVP Section */}
       <RSVPSection />

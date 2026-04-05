@@ -1,0 +1,90 @@
+node_modules/@iconify/react/dist/iconify.d.ts(4,21): error TS1259: Module '"C:/Users/nahue/Documents/nahu-mel/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+node_modules/@mui/utils/chainPropTypes/chainPropTypes.d.ts(1,8): error TS1259: Module '"C:/Users/nahue/Documents/nahu-mel/node_modules/@types/prop-types/index"' can only be default-imported using the 'esModuleInterop' flag
+node_modules/@mui/utils/elementAcceptingRef/elementAcceptingRef.d.ts(1,8): error TS1259: Module '"C:/Users/nahue/Documents/nahu-mel/node_modules/@types/prop-types/index"' can only be default-imported using the 'esModuleInterop' flag
+node_modules/@mui/utils/elementTypeAcceptingRef/elementTypeAcceptingRef.d.ts(1,8): error TS1259: Module '"C:/Users/nahue/Documents/nahu-mel/node_modules/@types/prop-types/index"' can only be default-imported using the 'esModuleInterop' flag
+node_modules/@mui/utils/integerPropType/integerPropType.d.ts(1,8): error TS1259: Module '"C:/Users/nahue/Documents/nahu-mel/node_modules/@types/prop-types/index"' can only be default-imported using the 'esModuleInterop' flag
+node_modules/@mui/utils/refType/refType.d.ts(1,8): error TS1259: Module '"C:/Users/nahue/Documents/nahu-mel/node_modules/@types/prop-types/index"' can only be default-imported using the 'esModuleInterop' flag
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1,8): error TS1259: Module '"C:/Users/nahue/Documents/nahu-mel/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(76,29): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'MapMode'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(126,19): error TS2694: Namespace 'google.maps' has no exported member 'Orientation3D'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(127,19): error TS2694: Namespace 'google.maps' has no exported member 'Orientation3DLiteral'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(138,19): error TS2694: Namespace 'google.maps' has no exported member 'Vector3D'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(139,19): error TS2694: Namespace 'google.maps' has no exported member 'Vector3DLiteral'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(214,26): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'Marker3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(226,66): error TS2724: 'google.maps' has no exported member named 'Map3DElement'. Did you mean 'MapElement'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(230,21): error TS2694: Namespace 'google.maps' has no exported member 'Marker3DElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(236,56): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'PopoverElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(239,21): error TS2694: Namespace 'google.maps' has no exported member 'Marker3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(242,63): error TS2694: Namespace 'google.maps' has no exported member 'Model3DElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(246,21): error TS2694: Namespace 'google.maps' has no exported member 'Model3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(251,21): error TS2694: Namespace 'google.maps' has no exported member 'Polyline3DElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(256,21): error TS2694: Namespace 'google.maps' has no exported member 'Polyline3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(261,21): error TS2694: Namespace 'google.maps' has no exported member 'Polygon3DElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(266,21): error TS2694: Namespace 'google.maps' has no exported member 'Polygon3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(271,21): error TS2694: Namespace 'google.maps' has no exported member 'PopoverElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(332,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceContextualElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(338,39): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceContextualListLayout'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(343,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceContextualListConfigElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(348,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceDetailsElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(357,34): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceDetailsOrientation'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(365,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceDetailsCompactElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(372,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceDetailsPlaceRequestElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(385,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceDetailsLocationRequestElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(390,52): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceSearchAttributionPosition'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(392,34): error TS2724: 'google.maps.places' has no exported member named 'PlaceSearchOrientation'. Did you mean 'PlaceSearchPagination'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(404,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceSearchElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(428,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceNearbySearchRequestElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(462,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceTextSearchRequestElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(471,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceContentConfigElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(476,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceAllContentElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(481,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceStandardContentElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(487,46): error TS2694: Namespace 'google.maps.places' has no exported member 'MediaSize'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(493,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceMediaElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(498,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceAddressElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(503,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceRatingElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(508,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceTypeElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(513,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlacePriceElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(518,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceAccessibleEntranceIconElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(523,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceOpenNowStatusElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(528,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceReviewsElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(533,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceSummaryElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(538,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceFeatureListElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(543,28): error TS2724: 'google.maps.places' has no exported member named 'PlaceOpeningHoursElement'. Did you mean 'PlaceOpeningHours'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(548,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlacePhoneNumberElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(553,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlacePlusCodeElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(558,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceTypeSpecificHighlightsElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(563,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceWebsiteElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(568,48): error TS2724: 'google.maps.places' has no exported member named 'AttributionColor'. Did you mean 'Attribution'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(569,49): error TS2724: 'google.maps.places' has no exported member named 'AttributionColor'. Did you mean 'Attribution'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(575,28): error TS2694: Namespace 'google.maps.places' has no exported member 'PlaceAttributionElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(599,21): error TS2694: Namespace 'google.maps' has no exported member 'airQuality'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(623,21): error TS2694: Namespace 'google.maps' has no exported member 'elevation'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(847,52): error TS2694: Namespace 'google.maps' has no exported member 'MapsAppCheckTokenResult'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1246,51): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'FlyAroundAnimationOptions'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1248,47): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'FlyToAnimationOptions'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1345,32): error TS2724: 'google.maps.maps3d' has no exported member named 'Marker3DElement'. Did you mean 'Map3DElement'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1345,69): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'Marker3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1379,64): error TS2724: 'google.maps.maps3d' has no exported member named 'Marker3DElementOptions'. Did you mean 'Map3DElementOptions'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1425,81): error TS2724: 'google.maps.maps3d' has no exported member named 'Marker3DElementOptions'. Did you mean 'Map3DElementOptions'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1443,44): error TS2724: 'google.maps.maps3d' has no exported member named 'Marker3DElement'. Did you mean 'Map3DElement'?
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1443,81): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'Marker3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1459,63): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'PopoverElementOptions'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1474,33): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'Marker3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1514,80): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'PopoverElementOptions'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1529,33): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'Marker3DInteractiveElement'.
+node_modules/@vis.gl/react-google-maps/dist/index.d.ts(1538,44): error TS2694: Namespace 'google.maps.maps3d' has no exported member 'PopoverElement'.
+src/components/LocationMap.tsx(10,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(18,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(19,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(22,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(23,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(26,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(30,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(44,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(45,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(46,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(92,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(96,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(103,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(104,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/components/LocationMap.tsx(128,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
