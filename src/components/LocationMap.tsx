@@ -157,7 +157,8 @@ const LocationMap = () => {
           <Button
             variant="contained"
             component={motion.a}
-            href="https://maps.google.com/?q=-24.604085,-65.381189"
+            // 👇 ¡Aquí está la magia! El parámetro "dir" y "destination" obligan a trazar la ruta
+            href="https://www.google.com/maps/dir/?api=1&destination=-24.604085,-65.381189"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
