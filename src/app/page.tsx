@@ -55,13 +55,9 @@ export default function Home() {
         <EventDetails />
         <LocationMap />
         <CelebrationItinerary />
+        <DressCodeSection />
+        <CardCostSection />
       </Box>
-
-      {/* Card Cost Section */}
-      <CardCostSection />
-
-      {/* Dress Code Section */}
-      <DressCodeSection />
 
       {/* RSVP Section */}
       <RSVPSection />

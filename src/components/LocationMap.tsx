@@ -23,11 +23,11 @@ const customMapStyles = [
     elementType: 'geometry',
     stylers: [{ color: '#dfd3c3' }, { visibility: 'on' }],
   },
-  {
-    featureType: 'landscape.man_made',
-    elementType: 'geometry',
-    stylers: [{ color: '#dfd3c3' }, { visibility: 'on' }],
-  },
+  // {
+  //   featureType: 'landscape.man_made',
+  //   elementType: 'geometry',
+  //   stylers: [{ color: '#dfd3c3' }, { visibility: 'on' }],
+  // },
   // 3. Resto de tu diseño vintage
   {
     featureType: 'road',

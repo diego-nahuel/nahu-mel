@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const DressCodeSection = () => {
   return (
-    <Box sx={{ bgcolor: '#fcf3ee', py: { xs: 6, md: 8 }, textAlign: 'center' }}>
+    <Box sx={{ pb: { xs: 6, md: 8 }, textAlign: 'center' }}>
       <Container maxWidth="sm">
         <Box
           component={motion.div}

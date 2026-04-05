@@ -174,7 +174,7 @@ const CardCostSection = () => {
                   fontStyle: 'italic'
                 }}
               >
-                Puedes realizar la transferencia al siguiente alias:
+                Puedes abonar en efectivo el mismo día de la boda o realizar la transferencia al siguiente alias:
               </Typography>
 
               <Tooltip
