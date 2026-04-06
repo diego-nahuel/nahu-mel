@@ -114,7 +114,7 @@ const LocationMap = () => {
               <Map
                 defaultZoom={15.5}
                 defaultCenter={{ lat: -24.604085, lng: -65.381189 }}
-                gestureHandling="greedy"
+                gestureHandling="cooperative"
                 disableDefaultUI={true}
                 keyboardShortcuts={false}
                 fullscreenControl={true}
