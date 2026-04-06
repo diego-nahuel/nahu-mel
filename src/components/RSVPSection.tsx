@@ -5,7 +5,8 @@ import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 
 const RSVPSection = () => {
-  const whatsappUrl = "https://wa.me/5493874062806?text=Hola!%20Quiero%20confirmar%20mi%20asistencia%20a%20la%20boda%20de%20Nahuel%20y%20Melanie%20%E2%9D%A4%EF%B8%8F";
+  const message = "Hola! Quiero confirmar mi asistencia a la boda de Nahuel y Melanie ❤️";
+  const whatsappUrl = `https://wa.me/5493874062806?text=${encodeURIComponent(message)}`;
 
   return (
     <Box sx={{ textAlign: 'center' }}>
