@@ -84,15 +84,14 @@ const LocationMap = () => {
           sx={{ width: '60px', mx: 'auto', mb: 4, height: '2px', bgcolor: 'terracotta.main' }}
         />
         <Typography variant="h5" gutterBottom sx={{ color: 'terracotta.main', fontWeight: 800 }}>
-          La Caldera
+          San Luis
         </Typography>
         <Typography
           variant="body1"
           color="text.secondary"
           sx={{ maxWidth: '600px', mx: 'auto', mb: 4 }}
         >
-          Acompáñanos a celebrar este momento especial en el lugar donde comenzó nuestra historia de
-          amor.
+          Acompáñanos a celebrar este momento tan especial
         </Typography>
 
         <Paper
@@ -113,7 +112,7 @@ const LocationMap = () => {
             <Box sx={{ width: '100%', height: 450, borderRadius: '8px 8px 0 0', overflow: 'hidden' }}>
               <Map
                 defaultZoom={15.5}
-                defaultCenter={{ lat: -24.604085, lng: -65.381189 }}
+                defaultCenter={{ lat: -24.845582, lng: -65.524439 }}
                 gestureHandling="cooperative"
                 disableDefaultUI={true}
                 keyboardShortcuts={false}
@@ -124,7 +123,7 @@ const LocationMap = () => {
                 styles={customMapStyles}
               >
                 <Marker
-                  position={{ lat: -24.604085, lng: -65.381189 }}
+                  position={{ lat: -24.845582, lng: -65.524439 }}
                   icon={{
                     path: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z",
                     fillColor: '#C0745A',
@@ -147,7 +146,7 @@ const LocationMap = () => {
                   textAlign: 'center',
                 }}
               >
-                Av. Gral. Güemes s/n, La Caldera, Salta
+                Nevado De Cachi 100 (Nevado De Cachi y La Candelaria)
               </Typography>
             </Box>
           </APIProvider>
@@ -158,7 +157,7 @@ const LocationMap = () => {
             variant="contained"
             component={motion.a}
             // 👇 ¡Aquí está la magia! El parámetro "dir" y "destination" obligan a trazar la ruta
-            href="https://www.google.com/maps/dir/?api=1&destination=-24.604085,-65.381189"
+            href="https://www.google.com/maps/dir/?api=1&destination=-24.845582,-65.524439"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 
 const EventDetails = () => {
-  const googleCalendarUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Nahuel+y+Melanie&dates=20260501T190000Z/20260502T050000Z&details=%C2%A1Los+esperamos+para+celebrar+nuestra+boda!&location=-24.604085,-65.381189";
+  const googleCalendarUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Nahuel+y+Melanie&dates=20260501T190000Z/20260502T050000Z&details=%C2%A1Los+esperamos+para+celebrar+nuestra+boda!&location=-24.845582,-65.524439";
 
   return (
     <Container 
